@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  lead_score:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command:  ["run", "-m", "/lead_score/models/lead_score_model.sav", "-p", "5008", "--enable-api"]
+    volumes:
+      - ./lead_score/models/:/lead_score/models/  # Release
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
