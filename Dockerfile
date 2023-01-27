@@ -7,8 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential
 
 WORKDIR /app
-COPY ./lead_score /app
-COPY .env /app
+COPY . /app
 
 RUN mkdir /data \
     && chmod 777 /data
@@ -19,7 +18,7 @@ RUN mkdir /models \
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 
-ENV LEAD_SCORE_PORT=5000
+ENV LEAD_SCORE_PORT=5001
 ENV FLASK_RUN_PORT=${LEAD_SCORE_PORT}
 EXPOSE ${LEAD_SCORE_PORT}
 

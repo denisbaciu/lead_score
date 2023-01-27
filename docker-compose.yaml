@@ -4,10 +4,12 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    command:  ["run", "-m", "/lead_score/models/lead_score_model.sav", "-p", "5008", "--enable-api"]
     volumes:
-      - ./lead_score/models/:/lead_score/models/  # Release
+      - ../lead_score/utils/:/app/lead_score/utils/  # Debug
+      - ../lead_score/data/:/app/lead_score/data:rw  # Debug
+      - ../lead_score/models/:/app/lead_score/models:rw # Debug
+      - ../lead_score/app.py:/app/lead_score/app.py  # Debug
     ports:
-      - "5000:5000"
+      - "5001:5001"
     env_file:
-      - ./.env
+      ./.env
