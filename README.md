@@ -1,4 +1,4 @@
-AGNISTIC LEAD SCORE
+Agnostic LEAD SCORE
 
 <img width="812" alt="image" src="https://github.com/denisbaciu/lead_score/assets/98389187/eadfcbae-f6c5-4b4a-a506-1b3de7dd6f48">
 
